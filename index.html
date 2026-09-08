@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RC Trackside Tuner | RC Setup & Tuning Assistant</title>
+
+<meta name="description"
+content="Diagnose handling issues, understand setup changes, and make better tuning decisions at the track.">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+    <div class="container nav-container">
+        <a href="index.html" class="nav-brand">
+            <img src="images/TTemblem2.png"
+                 class="nav-logo"
+                 alt="RC Trackside Tuner">
+        </a>
+        <button class="menu-toggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+            ☰
+        </button>
+        <div class="nav-links">
+            <a href="index.html#features">Features</a>
+            <a href="index.html#screenshots">Screenshots</a>
+            <a href="support.html">Support & Suggestions</a>
+            <a href="privacy.html">Privacy</a>
+        </div>
+    </div>
+</nav>
+
+<header class="hero">
+
+    <div class="container">
+
+        <img src="images/TTemblem.png" class="hero-logo">
+
+        <h1>RC Setup & Tuning Assistant</h1>
+
+        <p class="hero-text">
+            Diagnose handling issues, understand setup changes,
+            and make smarter tuning decisions at the track.
+        </p>
+
+        <a href="#" class="download-btn">
+            Download on the App Store
+        </a>
+
+    </div>
+
+</header>
+
+<section id="features">
+
+    <div class="container">
+
+        <h2>Built for RC Racers By RC Racers</h2>
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+                <h3>Handling Guides</h3>
+                <p>
+                    Diagnose handling issues and find recommended setup changes.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Setup References</h3>
+                <p>
+                    Learn exactly what each setup adjustment does and when to use it.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Recommended Adjustments</h3>
+                <p>
+                    Access prioritized tuning recommendations based on vehicle behavior.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Setup Notes</h3>
+                <p>
+                    Record setup changes, track conditions, and results.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="why">
+
+    <div class="container">
+
+        <h2>Why RC Trackside Tuner?</h2>
+
+        <p>
+            Instead of guessing at setup changes or searching through
+            forum posts, RC Trackside Tuner organizes proven tuning
+            information into a fast and easy-to-use reference tool.
+        </p>
+
+        <p>
+            Whether you're racing 1/10 or 1/8 off-road vehicles,
+            you'll spend less time guessing and more time making
+            meaningful setup changes.
+        </p>
+
+    </div>
+
+</section>
+
+<section id="screenshots">
+
+    <div class="container">
+
+        <h2>App Screenshots</h2>
+
+        <div class="screenshot-carousel">
+
+            <button class="carousel-arrow carousel-prev" aria-label="Previous screenshot">
+                &#10094;
+            </button>
+
+            <div class="carousel-track">
+
+                <div class="screenshot-slide active">
+                    <img src="images/home.png" alt="RC Trackside Tuner home screen">
+                </div>
+
+                <div class="screenshot-slide">
+                    <img src="images/2_4WDsection.png" alt="RC Trackside Tuner handling guide selection">
+                </div>
+
+                <div class="screenshot-slide">
+                    <img src="images/trackarea.png" alt="RC Trackside Tuner track area selection">
+                </div>
+
+                <div class="screenshot-slide">
+                    <img src="images/over_understeer.png" alt="RC Trackside Tuner handling recommendations">
+                </div>
+
+                <div class="screenshot-slide">
+                    <img src="images/setupnotes.png" alt="RC Trackside Tuner setup notes">
+                </div>
+
+                <div class="screenshot-slide">
+                    <img src="images/setupreferences.png" alt="RC Trackside Tuner setup references">
+                </div>
+
+                <div class="screenshot-slide">
+                    <img src="images/camberlink.png" alt="RC Trackside Tuner camber link">
+                </div>
+
+            </div>
+
+            <button class="carousel-arrow carousel-next" aria-label="Next screenshot">
+                &#10095;
+            </button>
+
+        </div>
+
+        <div class="carousel-dots">
+            <button class="carousel-dot active" aria-label="Show screenshot 1"></button>
+            <button class="carousel-dot" aria-label="Show screenshot 2"></button>
+            <button class="carousel-dot" aria-label="Show screenshot 3"></button>
+            <button class="carousel-dot" aria-label="Show screenshot 4"></button>
+            <button class="carousel-dot" aria-label="Show screenshot 5"></button>
+            <button class="carousel-dot" aria-label="Show screenshot 6"></button>
+            <button class="carousel-dot" aria-label="Show screenshot 7"></button>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="cta">
+
+    <div class="container">
+
+        <h2>Spend Less Time Guessing. More Time Racing.</h2>
+
+        <p>
+            RC Trackside Tuner puts proven setup knowledge,
+            troubleshooting guides, and adjustment references
+            in your pocket.
+        </p>
+
+        <a href="#" class="download-btn">
+            Download on the App Store
+        </a>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <img src="images/TTemblem2.png" class="footer-logo">
+
+    <p>RC Trackside Tuner</p>
+
+    <a href="support.html">Support & Suggestions</a>
+
+    <a href="privacy.html">Privacy Policy</a>
+
+    <p class="copyright">
+        © 2026 RC Trackside Tuner
+    </p>
+
+</footer>
+
+<script>
+
+const slides = document.querySelectorAll(".screenshot-slide");
+const dots = document.querySelectorAll(".carousel-dot");
+const previousButton = document.querySelector(".carousel-prev");
+const nextButton = document.querySelector(".carousel-next");
+
+let currentSlide = 0;
+
+function updateCarousel() {
+
+    slides.forEach((slide, index) => {
+
+        slide.classList.remove("active", "prev", "next");
+
+        if (index === currentSlide) {
+            slide.classList.add("active");
+        }
+
+        else if (
+            index ===
+            (currentSlide - 1 + slides.length) % slides.length
+        ) {
+            slide.classList.add("prev");
+        }
+
+        else if (
+            index ===
+            (currentSlide + 1) % slides.length
+        ) {
+            slide.classList.add("next");
+        }
+
+    });
+
+    dots.forEach((dot, index) => {
+        dot.classList.toggle(
+            "active",
+            index === currentSlide
+        );
+    });
+
+}
+
+function goToSlide(index) {
+
+    currentSlide =
+        (index + slides.length) % slides.length;
+
+    updateCarousel();
+
+}
+
+previousButton.addEventListener("click", () => {
+
+    goToSlide(currentSlide - 1);
+
+});
+
+nextButton.addEventListener("click", () => {
+
+    goToSlide(currentSlide + 1);
+
+});
+
+dots.forEach((dot, index) => {
+
+    dot.addEventListener("click", () => {
+
+        goToSlide(index);
+
+    });
+
+});
+
+/* ==========================================================
+   Touch Swipe
+========================================================== */
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+const carousel = document.querySelector(".carousel-track");
+
+carousel.addEventListener(
+    "touchstart",
+    (event) => {
+
+        touchStartX =
+            event.changedTouches[0].screenX;
+
+    },
+    { passive: true }
+);
+
+carousel.addEventListener(
+    "touchend",
+    (event) => {
+
+        touchEndX =
+            event.changedTouches[0].screenX;
+
+        const swipeDistance =
+            touchEndX - touchStartX;
+
+        if (Math.abs(swipeDistance) < 50) {
+            return;
+        }
+
+        if (swipeDistance < 0) {
+            goToSlide(currentSlide + 1);
+        }
+        else {
+            goToSlide(currentSlide - 1);
+        }
+
+    },
+    { passive: true }
+);
+
+updateCarousel();
+
+</script>
+
+<script>
+
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+menuToggle.addEventListener("click", () => {
+
+    const isOpen = navLinks.classList.toggle("open");
+
+    menuToggle.setAttribute(
+        "aria-expanded",
+        isOpen
+    );
+
+    menuToggle.setAttribute(
+        "aria-label",
+        isOpen
+            ? "Close navigation menu"
+            : "Open navigation menu"
+    );
+
+});
+
+navLinks.querySelectorAll("a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        navLinks.classList.remove("open");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+        menuToggle.setAttribute(
+            "aria-label",
+            "Open navigation menu"
+        );
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,818 @@
+@font-face {
+    font-family: "Exo 2";
+    src: url("fonts/Exo2-wght.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial,sans-serif;
+background:#f5f7fa;
+color:#111827;
+}
+
+h1,
+h2,
+h3{
+font-family:"Exo 2",sans-serif;
+font-weight:700;
+}
+
+nav a,
+.download-btn{
+font-family:"Exo 2",sans-serif;
+font-weight:600;
+}
+
+p{
+font-family:"Exo 2",sans-serif;
+font-weight:400;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+nav{
+background:#ffffff;
+border-bottom:3px solid #2563eb;
+padding:15px 0;
+position:sticky;
+top:0;
+z-index:100;
+}
+
+.nav-container{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.nav-logo{
+height:50px;
+}
+
+.nav-links a{
+color:#111827;
+font-weight:600;
+margin-left:20px;
+text-decoration:none;
+}
+
+.hero{
+padding:80px 0;
+text-align:center;
+}
+
+.hero-logo{
+max-width:900px;
+width:100%;
+margin-bottom:30px;
+}
+
+.hero h1{
+font-size:3rem;
+margin-bottom:20px;
+}
+
+.hero-text{
+max-width:700px;
+margin:auto;
+font-size:1.2rem;
+color:#4b5563;
+}
+
+.download-btn{
+display:inline-block;
+margin-top:30px;
+padding:15px 30px;
+background:#2563eb;
+color:white;
+text-decoration:none;
+border-radius:10px;
+font-weight:bold;
+box-shadow:0 5px 15px rgba(37,99,235,.3);
+transition:.25s;
+}
+
+.download-btn:hover{
+background:#1d4ed8;
+transform:translateY(-2px);
+}
+
+section{
+padding:60px 0;
+}
+
+section h2{
+text-align:center;
+margin-bottom:40px;
+font-size:2.2rem;
+}
+
+.feature-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.feature-card{
+background:white;
+border:1px solid #dbe3ec;
+box-shadow:0 6px 20px rgba(0,0,0,.08);
+padding:25px;
+border-radius:15px;
+}
+
+.feature-card h3{
+margin-bottom:15px;
+}
+
+.why{
+background:#eef2f7;
+}
+
+.why p{
+max-width:800px;
+margin:20px auto;
+text-align:center;
+font-size:1.1rem;
+color:#4b5563;
+}
+
+/* ==========================================================
+   Screenshot Carousel
+========================================================== */
+
+.screenshot-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    height: 650px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.carousel-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1200px;
+    touch-action: pan-y;
+}
+
+.screenshot-slide {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    /* The screenshot will never exceed this height */
+    height: 610px;
+    width: auto;
+
+    transform: translate(-50%, -50%) scale(0.58);
+    opacity: 0;
+
+    z-index: 1;
+
+    transition:
+        transform 0.4s ease,
+        opacity 0.4s ease;
+
+    pointer-events: none;
+}
+
+.screenshot-slide img {
+    display: block;
+    height: 100%;
+    width: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.18);
+}
+
+.screenshot-slide.active {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    z-index: 3;
+}
+
+.screenshot-slide.prev {
+    transform: translate(calc(-50% - 205px), -50%) scale(0.58);
+    opacity: 0.45;
+    z-index: 2;
+}
+
+.screenshot-slide.next {
+    transform: translate(calc(-50% + 205px), -50%) scale(0.58);
+    opacity: 0.45;
+    z-index: 2;
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+
+    width: 44px;
+    height: 44px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(17,24,39,.85);
+    color: white;
+
+    font-size: 23px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        background .2s ease,
+        transform .2s ease;
+}
+
+.carousel-arrow:hover {
+    background: rgba(17,24,39,1);
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.carousel-dot {
+    width: 9px;
+    height: 9px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: #cbd5e1;
+    cursor: pointer;
+
+    transition:
+        transform .2s ease,
+        background .2s ease;
+}
+
+.carousel-dot.active {
+    background: #2563eb;
+    transform: scale(1.25);
+}
+
+
+/* ==========================================================
+   Tablet
+========================================================== */
+
+@media (max-width: 900px) {
+
+    .screenshot-carousel {
+        height: 620px;
+    }
+
+    .screenshot-slide {
+        height: 580px;
+    }
+
+    .screenshot-slide.prev {
+        transform: translate(calc(-50% - 165px), -50%) scale(0.5);
+        opacity: 0.3;
+    }
+
+    .screenshot-slide.next {
+        transform: translate(calc(-50% + 165px), -50%) scale(0.5);
+        opacity: 0.3;
+    }
+
+}
+
+
+/* ==========================================================
+   Mobile
+========================================================== */
+
+@media (max-width: 600px) {
+
+    .screenshot-carousel {
+        height: 550px;
+    }
+
+    .screenshot-slide {
+        /* Fit the entire iPhone screenshot inside the carousel */
+        height: min(520px, 115vw);
+        max-height: 520px;
+    }
+
+    .screenshot-slide.active {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    .screenshot-slide.prev {
+        transform: translate(calc(-50% - 105px), -50%) scale(0.42);
+        opacity: 0.22;
+    }
+
+    .screenshot-slide.next {
+        transform: translate(calc(-50% + 105px), -50%) scale(0.42);
+        opacity: 0.22;
+    }
+
+    .carousel-arrow {
+        width: 38px;
+        height: 38px;
+        font-size: 19px;
+    }
+
+    .carousel-prev {
+        left: 4px;
+    }
+
+    .carousel-next {
+        right: 4px;
+    }
+
+}
+
+
+/* ==========================================================
+   Small Phones
+========================================================== */
+
+@media (max-width: 420px) {
+
+    .screenshot-carousel {
+        height: 500px;
+    }
+
+    .screenshot-slide {
+        height: min(470px, 115vw);
+    }
+
+    .screenshot-slide.prev {
+        transform: translate(calc(-50% - 85px), -50%) scale(0.36);
+        opacity: 0.15;
+    }
+
+    .screenshot-slide.next {
+        transform: translate(calc(-50% + 85px), -50%) scale(0.36);
+        opacity: 0.15;
+    }
+
+}
+
+.audience ul{
+max-width:500px;
+margin:auto;
+font-size:1.2rem;
+line-height:2;
+}
+
+footer{
+background:white;
+border-top:3px solid #2563eb;
+padding:60px 20px;
+text-align:center;
+}
+
+.footer-logo{
+width:120px;
+margin-bottom:20px;
+}
+
+footer a{
+color:#2563eb;
+font-weight:600;
+display:block;
+margin-top:15px;
+}
+
+.copyright{
+margin-top:20px;
+color:#6b7280;
+}
+
+.cta{
+    padding:100px 20px;
+    text-align:center;
+}
+
+.cta h2{
+    font-size:2.5rem;
+    margin-bottom:20px;
+}
+
+.cta p{
+    max-width:700px;
+    margin:0 auto 30px;
+    font-size:1.2rem;
+    color:#4b5563;
+}
+
+/* ==========================================================
+   Support & Suggestions Page
+========================================================== */
+
+.support-page {
+    padding: 60px 0;
+}
+
+.support-card {
+    max-width: 850px;
+    margin: 0 auto;
+    background: #ffffff;
+    border: 1px solid #dbe3ec;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    padding: 45px;
+}
+
+.support-back {
+    display: inline-block;
+    margin-bottom: 30px;
+    color: #555;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.support-back:hover {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+.support-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.support-logo {
+    width: 180px;
+    max-width: 70%;
+    height: auto;
+    margin-bottom: 25px;
+}
+
+.support-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.support-header p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #4b5563;
+    font-size: 1.1rem;
+}
+
+.support-section {
+    padding: 30px 0;
+    border-top: 1px solid #e5e7eb;
+}
+
+.support-section:first-of-type {
+    border-top: none;
+}
+
+.support-section h2 {
+    text-align: left;
+    margin-bottom: 15px;
+    font-size: 1.7rem;
+}
+
+.support-section h3 {
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+}
+
+.support-section p {
+    color: #4b5563;
+    line-height: 1.7;
+}
+
+.contact-box {
+    margin-top: 20px;
+    padding: 20px 22px;
+    background: #f5f7fa;
+    border: 1px solid #dbe3ec;
+    border-radius: 12px;
+}
+
+.contact-box a {
+    color: #2563eb;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.contact-box a:hover {
+    text-decoration: underline;
+}
+
+.support-section ul {
+    max-width: 650px;
+    margin: 15px 0 0 25px;
+    color: #4b5563;
+    line-height: 1.8;
+}
+
+.support-message {
+    text-align: center;
+}
+
+.support-message h2 {
+    text-align: center;
+}
+
+
+/* ==========================================================
+   Mobile Support Page
+========================================================== */
+
+@media (max-width: 600px) {
+
+    .support-page {
+        padding: 35px 0;
+    }
+
+    .support-card {
+        padding: 30px 22px;
+        border-radius: 14px;
+    }
+
+    .support-header {
+        margin-bottom: 30px;
+    }
+
+    .support-logo {
+        width: 150px;
+    }
+
+    .support-header h1 {
+        font-size: 2rem;
+    }
+
+    .support-header p {
+        font-size: 1rem;
+    }
+
+    .support-section {
+        padding: 25px 0;
+    }
+
+    .support-section h2 {
+        font-size: 1.45rem;
+    }
+
+}
+
+/* ==========================================================
+   Responsive Navigation
+========================================================== */
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+}
+
+.menu-toggle {
+    display: none;
+    border: none;
+    background: none;
+    color: #111827;
+    font-size: 30px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #111827;
+    font-weight: 600;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: #2563eb;
+}
+
+
+/* ==========================================================
+   Mobile Navigation
+========================================================== */
+
+@media (max-width: 700px) {
+
+    nav {
+        position: sticky;
+    }
+
+    .nav-container {
+        position: relative;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: calc(100% + 3px);
+        left: 0;
+        right: 0;
+
+        display: none;
+        flex-direction: column;
+
+        background: #ffffff;
+        border-bottom: 1px solid #dbe3ec;
+        box-shadow: 0 8px 20px rgba(0,0,0,.08);
+
+        padding: 10px 0;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        width: 100%;
+        margin: 0;
+        padding: 14px 20px;
+        text-align: left;
+    }
+
+    .nav-links a:hover {
+        background: #f5f7fa;
+    }
+
+}
+
+/* ==========================================================
+   Privacy Policy Page
+========================================================== */
+
+.privacy-page {
+    padding: 60px 0;
+}
+
+.privacy-card {
+    max-width: 850px;
+    margin: 0 auto;
+    background: #ffffff;
+    border: 1px solid #dbe3ec;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    padding: 45px;
+}
+
+.privacy-back {
+    margin-bottom: 30px;
+}
+
+.privacy-back a {
+    color: #555;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.privacy-back a:hover {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+.privacy-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.privacy-logo {
+    width: 180px;
+    max-width: 70%;
+    height: auto;
+    margin-bottom: 25px;
+}
+
+.privacy-header h1 {
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+}
+
+.privacy-date {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.privacy-section {
+    padding: 28px 0;
+    border-top: 1px solid #e5e7eb;
+}
+
+.privacy-section:first-of-type {
+    border-top: none;
+}
+
+.privacy-section h2 {
+    text-align: left;
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+}
+
+.privacy-section p {
+    color: #4b5563;
+    line-height: 1.7;
+}
+
+.privacy-section a {
+    color: #2563eb;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.privacy-section a:hover {
+    text-decoration: underline;
+}
+
+.privacy-footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+    text-align: center;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+
+/* ==========================================================
+   Mobile Privacy Page
+========================================================== */
+
+@media (max-width: 600px) {
+
+    .privacy-page {
+        padding: 35px 0;
+    }
+
+    .privacy-card {
+        padding: 30px 22px;
+        border-radius: 14px;
+    }
+
+    .privacy-header {
+        margin-bottom: 30px;
+    }
+
+    .privacy-logo {
+        width: 150px;
+    }
+
+    .privacy-header h1 {
+        font-size: 2rem;
+    }
+
+    .privacy-section {
+        padding: 24px 0;
+    }
+
+    .privacy-section h2 {
+        font-size: 1.4rem;
+    }
+
+}

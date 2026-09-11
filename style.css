@@ -392,6 +392,19 @@ color:#4b5563;
 
 @media (max-width: 420px) {
 
+     /* Mobile Hero Logo */
+
+    .hero-logo-desktop{
+        display:none !important;
+    }
+
+    .hero-logo-mobile{
+        display:block !important;
+        width:90%;
+        max-width:500px;
+        margin:0 auto 30px;
+    }
+
     .screenshot-carousel {
         height: 500px;
     }

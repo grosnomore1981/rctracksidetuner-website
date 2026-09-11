@@ -84,7 +84,7 @@ margin-bottom:30px;
 }
 
 .hero-logo-mobile{
-    display:none;
+    display:none !important;
 }
 
 .hero h1{
@@ -336,11 +336,11 @@ color:#4b5563;
     /* Mobile Hero Logo */
 
     .hero-logo-desktop{
-        display:none;
+        display:none !important;
     }
 
     .hero-logo-mobile{
-        display:block;
+        display:block !important;
         width:90%;
         max-width:500px;
         margin:0 auto 30px;

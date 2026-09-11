@@ -79,6 +79,14 @@ width:100%;
 margin-bottom:30px;
 }
 
+.hero-logo-desktop{
+    display:block;
+}
+
+.hero-logo-mobile{
+    display:none;
+}
+
 .hero h1{
 font-size:3rem;
 margin-bottom:20px;
@@ -325,12 +333,24 @@ color:#4b5563;
 
 @media (max-width: 600px) {
 
+    /* Mobile Hero Logo */
+
+    .hero-logo-desktop{
+        display:none;
+    }
+
+    .hero-logo-mobile{
+        display:block;
+        width:90%;
+        max-width:500px;
+        margin:0 auto 30px;
+    }
+
     .screenshot-carousel {
         height: 550px;
     }
 
     .screenshot-slide {
-        /* Fit the entire iPhone screenshot inside the carousel */
         height: min(520px, 115vw);
         max-height: 520px;
     }

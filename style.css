@@ -849,3 +849,41 @@ color:#6b7280;
     }
 
 }
+
+/* ==========================================
+   SEO Content Section
+========================================== */
+
+.seo-content {
+    background: #ffffff;
+    padding: 80px 0;
+}
+
+.seo-content .container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.seo-content h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.seo-content p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4b5563;
+}
+
+@media (max-width: 768px) {
+
+    .seo-content {
+        padding: 60px 20px;
+    }
+
+    .seo-content p {
+        font-size: 1rem;
+    }
+
+}

@@ -346,6 +346,16 @@ color:#4b5563;
         margin:0 auto 30px;
     }
 
+    .hero h1{
+    font-size: 2rem;
+    line-height: 1.15;
+    margin-bottom: 15px;
+    }
+
+    .hero-text{
+        font-size: 1rem;
+    }
+
     .screenshot-carousel {
         height: 550px;
     }
@@ -405,6 +415,11 @@ color:#4b5563;
         margin:0 auto 30px;
     }
 
+    .hero h1{
+    font-size: 1.6rem;
+    line-height: 1.15;
+    }
+
     .screenshot-carousel {
         height: 500px;
     }
@@ -449,6 +464,35 @@ color:#2563eb;
 font-weight:600;
 display:block;
 margin-top:15px;
+}
+
+.social-links{
+    margin-top:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.social-links a{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:#2563eb;
+    font-weight:600;
+    text-decoration:none;
+    transition:.2s;
+}
+
+.social-links a:hover{
+    color:#1d4ed8;
+    transform:translateY(-2px);
+}
+
+.social-icon{
+    width:22px;
+    height:22px;
 }
 
 .copyright{
